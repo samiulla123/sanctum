@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<div data-ng-app="" ng-init="name=skjchaskdhs">
+<ul>
+  <li ng-repeat="c in clients">
+    <p>{{c.c_name}}</p>
+  </li>
+</ul>
+<h1>{{name}}</h1>
+</div>
+<script >
+  var app=angular.module("ListClients",[]);
+  app.controller("clist",function($scope,$http){
+      $http({method:"GET",url:"http://127.0.0.1:8000/display/clients/"})
+      .then(function(response){
+        $scope.clients=response.data.vals;
+      });
+  });
+</script>
+
+</body>
+</html>

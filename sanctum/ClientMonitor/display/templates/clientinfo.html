@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>client information</title>
+</head>
+<body>
+<h1> client information</h1>
+<ul>
+    {% for val in vals %}
+    <li>{{ val.c_name }}</li>
+    <li>{{ val.time_stamp}}</li>
+    <li>{{ val.c_arch }}</li>
+    <li>{{ val.c_platform }}</li>
+    <li>{{ val.c_cpu }}</li>
+    <li>{{ val.c_rom }}</li>
+    <li>{{ val.c_ram_total }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
